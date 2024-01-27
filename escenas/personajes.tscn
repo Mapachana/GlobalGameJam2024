@@ -1,10 +1,98 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfy0n0xf8xlch"]
+[gd_scene load_steps=12 format=3 uid="uid://bfy0n0xf8xlch"]
 
-[ext_resource type="Texture2D" uid="uid://c4q7psiec8ile" path="res://graficos/rectanguloverde.png" id="1_74cae"]
 [ext_resource type="Script" path="res://escenas/personajes.gd" id="1_bsgrh"]
+[ext_resource type="Texture2D" uid="uid://chmcwn0q3txew" path="res://graficos/MuelaSpritesheet.png" id="2_hg1ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm1st"]
 size = Vector2(578, 598)
+
+[sub_resource type="Animation" id="Animation_8duw2"]
+resource_name = "quieta"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 0]
+}
+
+[sub_resource type="Animation" id="Animation_q8wbv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sy2tb"]
+resource_name = "andar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_4gegl"]
+resource_name = "risa_lengua"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_0qu0w"]
+resource_name = "risa"
+
+[sub_resource type="Animation" id="Animation_s8n5m"]
+resource_name = "muerto"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.2, 0),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [8, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e4ig2"]
+_data = {
+"RESET": SubResource("Animation_q8wbv"),
+"andar": SubResource("Animation_sy2tb"),
+"muerto": SubResource("Animation_s8n5m"),
+"quieta": SubResource("Animation_8duw2"),
+"risa": SubResource("Animation_0qu0w"),
+"risa_lengua": SubResource("Animation_4gegl")
+}
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_05lwe"]
 radius = 856.468
@@ -18,9 +106,14 @@ position = Vector2(-6, 2)
 shape = SubResource("RectangleShape2D_xm1st")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_74cae")
+texture = ExtResource("2_hg1ia")
+hframes = 2
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e4ig2")
+}
 
 [node name="Area2D" type="Area2D" parent="."]
 

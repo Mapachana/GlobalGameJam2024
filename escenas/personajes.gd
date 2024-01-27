@@ -53,6 +53,12 @@ func _physics_process(delta):
 			target = Vector2(cos(angulo), sin(angulo))*RADIO
 		
 		velocity = (target - position).normalized() * SPEED	
+		
+		if (velocity.x < 0):
+			print("A izquierda")
+		else:
+			print("a derecha")
+		
 		move_and_slide()
 	
 		# Si se esta infectado se inicia la cuenta atras para morir
