@@ -10,37 +10,51 @@ var infectado
 var radio
 var velocidad_giro
 var angulo
+var muerto
+var temporizador
+var tiempo_max_infectado
 
 
 func _ready():
 	target_index = 0
-	infectado = true
+	infectado = false
 	radio = 1000000
 	velocidad_giro = 10
 	angulo = 0
+	muerto = false
+	temporizador = 0
+	tiempo_max_infectado = 10
 
 func _physics_process(delta):
 	
 	var target
-	if (!infectado):
-		target = puntos[target_index]
-
-		if (position.distance_to(target) < 1) and (target_index < (puntos.size()-1)) :
-			print("YA")
-			print(position.distance_to(target))
-			target_index += 1
+	
+	if !muerto:
+		if (!infectado):
 			target = puntos[target_index]
 
-	else:
-		angulo = fmod(angulo + (velocidad_giro * delta), 2 * PI)
-		target = Vector2(cos(angulo), sin(angulo))*radio
+			if (position.distance_to(target) < 1) and (target_index < (puntos.size()-1)) :
+				print("YA")
+				print(position.distance_to(target))
+				target_index += 1
+				target = puntos[target_index]
+
+		else:
+			angulo = fmod(angulo + (velocidad_giro * delta), 2 * PI)
+			target = Vector2(cos(angulo), sin(angulo))*radio
+			
+		velocity = (target - position).normalized() * SPEED	
+		move_and_slide()
+	
+		if infectado:
+			temporizador += delta
 		
-	velocity = (target - position).normalized() * SPEED	
-	move_and_slide()
+			if temporizador >= tiempo_max_infectado:
+				muerto = true;
 
 
 func _on_area_2d_body_entered(body):
-	if body.infectado:
+	if !muerto and body.infectado:
 		# Me infecto yo
 		self.infectado = true;
 		
