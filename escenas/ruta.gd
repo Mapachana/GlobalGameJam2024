@@ -18,6 +18,8 @@ var total_pasos=-1
 var indice_paso=0
 var siguiente_objetivo=null
 
+@export
+var contenido=100
 
 @export
 var velocidad=5
@@ -28,20 +30,29 @@ func _ready():
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("pinchar"):
-		comenzar_ruta()
-	elif Input.is_action_pressed("pinchar"):
-		seguir_ruta()
-	elif Input.is_action_just_released("pinchar"):
-		parar_ruta()	
+	if estado!=final:
+		if Input.is_action_just_pressed("pinchar"):
+			comenzar_ruta()
+		elif Input.is_action_pressed("pinchar"):
+			seguir_ruta()
+		elif Input.is_action_just_released("pinchar"):
+			parar_ruta()	
+	else:
+		if Input.is_action_pressed("pinchar"):
+			if contenido>0:
+				$MuelaParada/AnimationPlayerHumo.play("flusss")	
+
 		
 	if estado==final:
+		
 		if siguiente_objetivo!=null:
 			if $MuelaParada.position.distance_to(siguiente_objetivo)<offset:
 				indice_paso=clamp(indice_paso+1,0,total_pasos-1)
 				siguiente_objetivo=$Line2D.get_point_position(indice_paso)
 			$MuelaParada.position=$MuelaParada.position+(siguiente_objetivo-$MuelaParada.position).normalized()*velocidad
 			
+
+				
 		#$Path2D/PathFollow2D.set_progress(progreso)
 		#progreso=clamp(progreso+delta,0,1.0)
 		
@@ -83,4 +94,7 @@ func parar_ruta():
 	
 func _on_input_event(viewport, event, shape_idx):
 	pass
-			
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("personajes"):
+		body.infectado = true;
