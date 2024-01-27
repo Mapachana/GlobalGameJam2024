@@ -15,6 +15,7 @@ var angulo
 var muerto
 var temporizador
 var puntos_vuelta
+var orientacion
 
 
 
@@ -30,6 +31,17 @@ func _ready():
 	
 	# Van y vuelven por la ruta indicada
 	asignar_puntos_vuelta()
+	randomize()
+	
+	# Aleatorizacion del sentido de giro
+	orientacion = randf()
+	
+	if orientacion <= 0.5:
+		orientacion = 1
+	else:
+		orientacion = -1
+	
+	$AnimationPlayer.play("quieta")
 	
 
 func _physics_process(delta):
@@ -40,6 +52,7 @@ func _physics_process(delta):
 	if !muerto:
 		# Si no estoy infectado me muevo en ruta fija
 		if (!infectado):
+			$AnimationPlayer.play("andar")
 			target = puntos_vuelta[target_index]
 
 			if position.distance_to(target) < 10 :
@@ -49,15 +62,19 @@ func _physics_process(delta):
 				target = puntos_vuelta[target_index]
 		# Si estoy infectado me muevo en circulos
 		else:
+			$AnimationPlayer.play("risa_lengua")
 			angulo = fmod(angulo + (VELOCIDAD_GIRO * delta), 2 * PI)
-			target = Vector2(cos(angulo), sin(angulo))*RADIO
+			target = Vector2(cos(angulo), sin(angulo))*RADIO*orientacion
 		
 		velocity = (target - position).normalized() * SPEED	
 		
+
 		if (velocity.x < 0):
-			print("A izquierda")
+			$Sprite2D.flip_h = true
+			$Sprite2D.offset.x = 76
 		else:
-			print("a derecha")
+			$Sprite2D.flip_h = false
+			$Sprite2D.offset.x = -70
 		
 		move_and_slide()
 	
@@ -67,6 +84,7 @@ func _physics_process(delta):
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true;
+				$AnimationPlayer.play("muerto")
 				#print("ME MUERO")
 
 
