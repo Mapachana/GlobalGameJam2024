@@ -16,9 +16,9 @@ infectado = true
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_3dvat")]
 position = Vector2(1168, 55)
 scale = Vector2(0.25, 0.25)
-puntos = PackedVector2Array(1168, 55, 500, 300, 500, 200, 4, 52, 900, 30)
+puntos = PackedVector2Array(1168, 55, 500, 200, 4, 52, 900, 30)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("1_3dvat")]
 position = Vector2(570, 547)
 scale = Vector2(0.25, 0.25)
-puntos = PackedVector2Array(570, 547, 600, 50)
+puntos = PackedVector2Array(570, 547, 500, 50, 100, 50)

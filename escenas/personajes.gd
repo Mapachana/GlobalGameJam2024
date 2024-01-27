@@ -3,8 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const VELOCIDAD_GIRO = 10.0
-const RADIO = 10000
-const DISTANCIA_CAMBIO = 20
+const RADIO = 1000000000
+const DISTANCIA_CAMBIO = 10
 const TIEMPO_MAX_INFECTADO = 10
 
 @export var puntos: PackedVector2Array
@@ -25,7 +25,7 @@ func _ready():
 	muerto = false
 	temporizador = 0
 	
-	#self.add_to_group("personajes")
+	self.add_to_group("personajes")
 	
 	asignar_puntos_vuelta()
 	
@@ -63,16 +63,18 @@ func _on_area_2d_body_entered(body):
 	if body != self:
 		print("ENTRO EN AREAAAAAA")
 		print(body)
+		print(body.infectado)
+		print(muerto)
 	
-	if body != self and !muerto and body.infectado:
+	if body != self and !muerto and body.is_in_group("personajes") and body.infectado:
 		# Me infecto yo
 		print("ME INFECTO")
 		infectado = true;
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
-			#if bodies.is_in_group("personajes"):
-			bodies.infectado = true;
+			if bodies.is_in_group("personajes"):
+				bodies.infectado = true;
 			
 func asignar_puntos_vuelta():
 	puntos_vuelta = puntos;
