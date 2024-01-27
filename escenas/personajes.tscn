@@ -14,8 +14,7 @@ point_count = 2
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_bsgrh")
-patrol_path = NodePath("Path2D")
-puntos = PackedVector2Array(0, 0, 10, 0, 50, 10)
+puntos = PackedVector2Array(0, 0, 30, 0, 50, 10)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-6, 2)
