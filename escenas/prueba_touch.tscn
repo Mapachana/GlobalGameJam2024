@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba1yguwgfucla"]
+[gd_scene load_steps=3 format=3 uid="uid://d2ywmrms1q6pc"]
 
 [ext_resource type="Script" path="res://escenas/prueba_touch.gd" id="1_mv415"]
 [ext_resource type="Texture2D" uid="uid://vd7obti60ysv" path="res://graficos/img_muela/Muela_parada_1_centrada.png" id="2_yw7et"]

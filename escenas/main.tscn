@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bkyiibuhic5o3"]
+[gd_scene load_steps=6 format=3 uid="uid://bkyiibuhic5o3"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jk5rv"]
 [ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_sc0gf"]
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="3_jriv1"]
+[ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_6test"]
 
 [sub_resource type="Theme" id="Theme_g4vhq"]
 
@@ -46,3 +47,6 @@ position = Vector2(768, 435)
 position = Vector2(52, 52)
 puntos = PackedVector2Array(52, 52, 100, 200, 800, 300, 0, 0)
 infectado = true
+
+[node name="Ruta" parent="." instance=ExtResource("4_6test")]
+position = Vector2(2, 4)
