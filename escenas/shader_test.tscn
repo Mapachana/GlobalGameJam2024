@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://du0qupdooyt01"]
+
+[ext_resource type="Shader" path="res://graficos/muerto.gdshader" id="1_lr2lh"]
+[ext_resource type="Texture2D" uid="uid://dbwewu56j1yw" path="res://graficos/Muela_parada.png" id="2_ij143"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vsj3k"]
+shader = ExtResource("1_lr2lh")
+shader_parameter/vida = -0.285
+
+[node name="ShaderTest" type="Node2D"]
+
+[node name="MuelaParada" type="Sprite2D" parent="."]
+modulate = Color(1, 0.290196, 0.380392, 1)
+self_modulate = Color(1, 0.619608, 0.568627, 1)
+material = SubResource("ShaderMaterial_vsj3k")
+position = Vector2(489, 224)
+texture = ExtResource("2_ij143")

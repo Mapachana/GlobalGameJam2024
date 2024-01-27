@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://qrke8xc8tsec"]
 
 [ext_resource type="Script" path="res://escenas/ruta.gd" id="1_bpjdd"]
-[ext_resource type="Texture2D" uid="uid://dbwewu56j1yw" path="res://graficos/Muela_parada.png" id="2_p0cwi"]
+[ext_resource type="Texture2D" uid="uid://cu4nc71q88he0" path="res://graficos/BotellaNO2.png" id="2_3p3jd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8d10g"]
 size = Vector2(1572, 899)
@@ -283,14 +283,12 @@ joint_mode = 2
 
 [node name="MuelaParada" type="Sprite2D" parent="."]
 position = Vector2(1827, 1205)
-texture = ExtResource("2_p0cwi")
-hframes = 2
+texture = ExtResource("2_3p3jd")
 
 [node name="gas" type="Sprite2D" parent="MuelaParada"]
 show_behind_parent = true
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_p0cwi")
-hframes = 2
+texture = ExtResource("2_3p3jd")
 
 [node name="AnimationPlayerHumo" type="AnimationPlayer" parent="MuelaParada"]
 root_node = NodePath("../..")
