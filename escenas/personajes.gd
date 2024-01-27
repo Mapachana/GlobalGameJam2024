@@ -2,28 +2,31 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
+const VELOCIDAD_GIRO = 10.0
+const RADIO = 10000
+const DISTANCIA_CAMBIO = 20
+const TIEMPO_MAX_INFECTADO = 10
 
 @export var puntos: PackedVector2Array
 
 var target_index
-var infectado
-var radio
-var velocidad_giro
+@export var infectado: bool
 var angulo
 var muerto
 var temporizador
-var tiempo_max_infectado
+var puntos_vuelta
+
 
 
 func _ready():
 	target_index = 0
-	infectado = false
-	radio = 1000000
-	velocidad_giro = 10
+	# infectado = false
 	angulo = 0
 	muerto = false
 	temporizador = 0
-	tiempo_max_infectado = 10
+	
+	asignar_puntos_vuelta()
+	
 
 func _physics_process(delta):
 	
@@ -31,33 +34,47 @@ func _physics_process(delta):
 	
 	if !muerto:
 		if (!infectado):
-			target = puntos[target_index]
+			target = puntos_vuelta[target_index]
 
-			if (position.distance_to(target) < 1) and (target_index < (puntos.size()-1)) :
-				print("YA")
+			if position.distance_to(target) < 10 :
+				print("CAMBIO RUMBO")
 				print(position.distance_to(target))
-				target_index += 1
-				target = puntos[target_index]
+				target_index = fmod(target_index+1, puntos_vuelta.size())
+				target = puntos_vuelta[target_index]
 
 		else:
-			angulo = fmod(angulo + (velocidad_giro * delta), 2 * PI)
-			target = Vector2(cos(angulo), sin(angulo))*radio
-			
+			angulo = fmod(angulo + (VELOCIDAD_GIRO * delta), 2 * PI)
+			target = Vector2(cos(angulo), sin(angulo))*RADIO
+		
 		velocity = (target - position).normalized() * SPEED	
 		move_and_slide()
 	
 		if infectado:
 			temporizador += delta
 		
-			if temporizador >= tiempo_max_infectado:
+			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true;
+				print("ME MUERO")
 
 
 func _on_area_2d_body_entered(body):
-	if !muerto and body.infectado:
+	if body != self:
+		print("ENTRO EN AREAAAAAA")
+	
+	if body != self and !muerto and body.infectado:
 		# Me infecto yo
-		self.infectado = true;
+		print("ME INFECTO")
+		infectado = true;
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
 			bodies.infectado = true;
+			
+func asignar_puntos_vuelta():
+	puntos_vuelta = puntos;
+	
+	for i in range(puntos.size() - 2, 0, -1):
+		puntos_vuelta.append(puntos[i])
+		
+	print(puntos_vuelta)
+		
