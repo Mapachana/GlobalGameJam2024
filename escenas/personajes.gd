@@ -25,6 +25,8 @@ func _ready():
 	muerto = false
 	temporizador = 0
 	
+	#self.add_to_group("personajes")
+	
 	asignar_puntos_vuelta()
 	
 
@@ -60,6 +62,7 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	if body != self:
 		print("ENTRO EN AREAAAAAA")
+		print(body)
 	
 	if body != self and !muerto and body.infectado:
 		# Me infecto yo
@@ -68,6 +71,7 @@ func _on_area_2d_body_entered(body):
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
+			#if bodies.is_in_group("personajes"):
 			bodies.infectado = true;
 			
 func asignar_puntos_vuelta():
