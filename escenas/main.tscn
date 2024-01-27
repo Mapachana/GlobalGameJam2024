@@ -46,5 +46,3 @@ position = Vector2(768, 435)
 position = Vector2(52, 52)
 puntos = PackedVector2Array(52, 52, 100, 200, 800, 300, 0, 0)
 infectado = true
-
-[connection signal="sumarpunto" from="." to="." method="_on_sumarpunto"]

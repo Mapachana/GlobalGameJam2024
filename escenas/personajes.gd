@@ -84,8 +84,8 @@ func _physics_process(delta):
 			temporizador += delta
 			
 			if temporizador >= 8:
-				$Sprite2D.material.shader=sombreador_muerte
-				#self.material.shader = shaderdying
+				#$Sprite2D.material.shader=sombreador_muerte
+				pass
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true

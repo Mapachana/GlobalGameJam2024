@@ -6,7 +6,7 @@ var current_scene = null
 
 var puntuacion = 0
 
-signal sumarpunto(punt)
+#signal sumarpunto(punt)
 
 func _ready():
 	var root = get_tree().root
@@ -15,7 +15,7 @@ func _ready():
 func sumar_puntuacion():
 	print("SUMOOOOOOOOOOOOOOO")
 	puntuacion += 1
-	sumarpunto.emit(puntuacion)
+	#sumarpunto.emit(puntuacion)
 	get_tree().call_group("ventana", "mostrar_puntuacion", puntuacion)
 
 func goto_scene(path):
