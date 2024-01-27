@@ -81,9 +81,12 @@ func _physics_process(delta):
 		# Si se esta infectado se inicia la cuenta atras para morir
 		if infectado:
 			temporizador += delta
+			
+			if temporizador >= 8:
+				pass
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
-				muerto = true;
+				muerto = true
 				$AnimationPlayer.play("muerto")
 				#print("ME MUERO")
 
