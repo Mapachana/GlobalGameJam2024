@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwo1t2hoperdk"]
+[gd_scene load_steps=3 format=3 uid="uid://cwo1t2hoperdk"]
 
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="1_3dvat"]
+[ext_resource type="PackedScene" uid="uid://bkyiibuhic5o3" path="res://escenas/main.tscn" id="2_gtr37"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -16,9 +17,11 @@ infectado = true
 [node name="CharacterBody2D2" parent="." instance=ExtResource("1_3dvat")]
 position = Vector2(1168, 55)
 scale = Vector2(0.25, 0.25)
-puntos = PackedVector2Array(1168, 55, 500, 300, 500, 200, 4, 52, 900, 30)
+puntos = PackedVector2Array(1168, 55, 500, 200, 4, 52, 900, 30)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("1_3dvat")]
 position = Vector2(570, 547)
 scale = Vector2(0.25, 0.25)
-puntos = PackedVector2Array(570, 547, 600, 50)
+puntos = PackedVector2Array(570, 547, 500, 50, 100, 50)
+
+[node name="Node2D" parent="." instance=ExtResource("2_gtr37")]
