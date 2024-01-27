@@ -17,6 +17,8 @@ var temporizador
 var puntos_vuelta
 var orientacion
 
+@onready var shaderdying = preload("res://graficos/muerto.gdshader")
+
 
 
 func _ready():
@@ -83,7 +85,7 @@ func _physics_process(delta):
 			temporizador += delta
 			
 			if temporizador >= 8:
-				pass
+				self.material.shader = shaderdying
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true
