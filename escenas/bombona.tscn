@@ -41,7 +41,6 @@ shape = SubResource("RectangleShape2D_bleme")
 
 [node name="Timer" type="Timer" parent="." groups=["bombona"]]
 wait_time = 3.0
-autostart = true
 
 [node name="particulas" type="GPUParticles2D" parent="."]
 emitting = false

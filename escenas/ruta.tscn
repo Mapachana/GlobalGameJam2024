@@ -1,15 +1,79 @@
-[gd_scene load_steps=3 format=3 uid="uid://qrke8xc8tsec"]
+[gd_scene load_steps=8 format=3 uid="uid://qrke8xc8tsec"]
 
 [ext_resource type="Script" path="res://escenas/ruta.gd" id="1_bpjdd"]
+[ext_resource type="Texture2D" uid="uid://dbwewu56j1yw" path="res://graficos/Muela_parada.png" id="2_p0cwi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8d10g"]
-size = Vector2(1917, 1089)
+size = Vector2(1572, 899)
+
+[sub_resource type="Animation" id="Animation_2xtaj"]
+resource_name = "parada"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuelaParada:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector2i(0, 0), Vector2i(1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_6dv8h"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MuelaParada:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2i(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n567q"]
+_data = {
+"RESET": SubResource("Animation_6dv8h"),
+"parada": SubResource("Animation_2xtaj")
+}
+
+[sub_resource type="Curve2D" id="Curve2D_ox6aq"]
 
 [node name="Ruta" type="Area2D"]
 script = ExtResource("1_bpjdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(959.5, 534.5)
+position = Vector2(766, 431.5)
 shape = SubResource("RectangleShape2D_8d10g")
+
+[node name="Line2D" type="Line2D" parent="."]
+width = 2.0
+default_color = Color(0.282353, 0.282353, 0.282353, 1)
+joint_mode = 2
+
+[node name="MuelaParada" type="Sprite2D" parent="."]
+position = Vector2(1827, 1205)
+texture = ExtResource("2_p0cwi")
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_n567q")
+}
+autoplay = "parada"
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_ox6aq")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(343, 783)
+rotation = -2.07335
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
