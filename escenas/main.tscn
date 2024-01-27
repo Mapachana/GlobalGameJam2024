@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkyiibuhic5o3"]
+[gd_scene load_steps=4 format=3 uid="uid://bkyiibuhic5o3"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jk5rv"]
+[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_sc0gf"]
+[ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="3_jriv1"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_jk5rv")
@@ -17,3 +19,15 @@ offset_right = 189.0
 offset_bottom = 67.0
 theme_override_font_sizes/font_size = 23
 text = "Teeth infected: 0"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(767, 434)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_sc0gf")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 435)
+
+[node name="CharacterBody2D" parent="Camera2D" instance=ExtResource("3_jriv1")]
+position = Vector2(-589, -39)
+scale = Vector2(0.75, 0.75)

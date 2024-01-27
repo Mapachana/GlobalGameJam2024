@@ -83,7 +83,7 @@ func _physics_process(delta):
 			temporizador += delta
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
-				muerto = true;
+				muerto = true
 				$AnimationPlayer.play("muerto")
 				#print("ME MUERO")
 
