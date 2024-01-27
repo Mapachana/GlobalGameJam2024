@@ -67,15 +67,17 @@ func _physics_process(delta):
 func _on_area_2d_body_entered(body):
 	#print("ENTRO EN AREAAAAAA")
 	# Si se me acerca alguien infectado y estoy vivo
-	if body != self and !muerto and body.is_in_group("personajes") and body.infectado:
+	if body != self and !muerto and body.is_in_group("personajes") and body.infectado and !infectado:
 		# Me infecto yo
 		#print("ME INFECTO")
 		infectado = true;
+		get_tree().call_group("ventana", "subir_puntuacion")
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
-			if bodies.is_in_group("personajes"):
+			if bodies.is_in_group("personajes") and !bodies.infectado:
 				bodies.infectado = true;
+				get_tree().call_group("ventana", "subir_puntuacion")
 			
 # Dados los puntos de la ruta crea un array con la ruta de ida+vuelta
 func asignar_puntos_vuelta():
