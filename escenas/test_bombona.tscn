@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp1hwcys2bgnk"]
+
+[ext_resource type="PackedScene" uid="uid://bjqlphf5cag8b" path="res://escenas/bombona.tscn" id="1_61jxc"]
+
+[node name="TestBombona" type="Node2D"]
+
+[node name="Bombona" parent="." instance=ExtResource("1_61jxc")]
+position = Vector2(170, 98)
+
+[node name="Bombona2" parent="." instance=ExtResource("1_61jxc")]
+position = Vector2(359, 305)
+
+[node name="Bombona3" parent="." instance=ExtResource("1_61jxc")]
+position = Vector2(645, 194)
+alcance = 6
+
+[node name="Bombona4" parent="." instance=ExtResource("1_61jxc")]
+position = Vector2(685, 489)
