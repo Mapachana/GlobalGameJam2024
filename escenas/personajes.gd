@@ -17,8 +17,7 @@ var temporizador
 var puntos_vuelta
 var orientacion
 
-@onready var shaderdying = preload("res://graficos/muerto.gdshader")
-
+@onready var sombreador_muerte = preload("res://graficos/muerto.gdshader")
 
 
 func _ready():
@@ -85,10 +84,12 @@ func _physics_process(delta):
 			temporizador += delta
 			
 			if temporizador >= 8:
-				self.material.shader = shaderdying
+				$Sprite2D.material.shader=sombreador_muerte
+				#self.material.shader = shaderdying
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true
+				$Sprite2D.material.shader=null
 				$AnimationPlayer.play("muerto")
 				#print("ME MUERO")
 
@@ -100,13 +101,13 @@ func _on_area_2d_body_entered(body):
 		# Me infecto yo
 		#print("ME INFECTO")
 		infectado = true;
-		get_tree().call_group("ventana", "subir_puntuacion")
+		Globales.sumar_puntuacion()
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
 			if bodies.is_in_group("personajes") and !bodies.infectado:
 				bodies.infectado = true;
-				get_tree().call_group("ventana", "subir_puntuacion")
+				Globales.sumar_puntuacion()
 			
 # Dados los puntos de la ruta crea un array con la ruta de ida+vuelta
 func asignar_puntos_vuelta():

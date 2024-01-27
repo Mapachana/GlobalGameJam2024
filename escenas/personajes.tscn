@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfy0n0xf8xlch"]
+[gd_scene load_steps=13 format=3 uid="uid://bfy0n0xf8xlch"]
 
 [ext_resource type="Script" path="res://escenas/personajes.gd" id="1_bsgrh"]
 [ext_resource type="Texture2D" uid="uid://chmcwn0q3txew" path="res://graficos/MuelaSpritesheet.png" id="2_hg1ia"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm1st"]
 size = Vector2(77, 85.25)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oxcd4"]
 
 [sub_resource type="Animation" id="Animation_q8wbv"]
 length = 0.001
@@ -112,6 +114,7 @@ position = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_xm1st")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_oxcd4")
 texture = ExtResource("2_hg1ia")
 offset = Vector2(-70, -15)
 hframes = 2
