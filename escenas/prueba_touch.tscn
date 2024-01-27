@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://ba1yguwgfucla"]
+
+[ext_resource type="Script" path="res://escenas/prueba_touch.gd" id="1_mv415"]
+[ext_resource type="Texture2D" uid="uid://vd7obti60ysv" path="res://graficos/img_muela/Muela_parada_1_centrada.png" id="2_yw7et"]
+
+[node name="PruebaTouch" type="Node2D"]
+script = ExtResource("1_mv415")
+
+[node name="MuelaParada1Centrada" type="Sprite2D" parent="."]
+texture = ExtResource("2_yw7et")
+offset = Vector2(-72.165, -16.28)

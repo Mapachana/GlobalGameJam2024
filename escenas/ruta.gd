@@ -98,3 +98,14 @@ func _on_input_event(viewport, event, shape_idx):
 func _on_area_2d_body_entered(body):
 	if body.is_in_group("personajes"):
 		body.infectado = true;
+
+func _unhandled_input(event):
+	if estado!=final:
+		if event is InputEventScreenTouch:
+			if event.pressed==true:
+				comenzar_ruta()
+			elif event.pressed==false:
+				parar_ruta()			
+		if  (event is InputEventScreenDrag): # (event is InputEventScreenTouch) or
+			seguir_ruta()	
+			
