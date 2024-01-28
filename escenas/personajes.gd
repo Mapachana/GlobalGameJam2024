@@ -87,12 +87,18 @@ func _physics_process(delta):
 			if temporizador >= 8:
 				#$Sprite2D.material.shader=sombreador_muerte
 				pass
+				
+			if !$AudioStreamPlayer.is_playing():
+				#$AudioStreamPlayer.stream = "res://musica/03-jijii - stem-consolidated.mp3"
+				$AudioStreamPlayer.play()
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:
 				muerto = true
 				$Sprite2D.material.shader=null
 				$AnimationPlayer.play("muerto")
 				#print("ME MUERO")
+	else:
+		$AudioStreamPlayer.stop()
 
 
 func _on_area_2d_body_entered(body):
