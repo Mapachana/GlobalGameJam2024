@@ -32,13 +32,13 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_left = 1330.0
-offset_top = 15.0
-offset_right = 1519.0
-offset_bottom = 82.0
+offset_left = 1276.0
+offset_top = 29.0
+offset_right = 1486.0
+offset_bottom = 96.0
 theme = SubResource("Theme_g4vhq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 26
 text = "Teeth infected: 0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
