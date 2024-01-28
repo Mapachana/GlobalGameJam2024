@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkyiibuhic5o3"]
+[gd_scene load_steps=9 format=3 uid="uid://bkyiibuhic5o3"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jk5rv"]
 [ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_sc0gf"]
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="3_jriv1"]
 [ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_6test"]
 [ext_resource type="PackedScene" uid="uid://d058ykhwot3kd" path="res://camilla.tscn" id="5_dqjgg"]
+[ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="6_7cyp1"]
 [ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="6_d44dq"]
 
 [sub_resource type="Theme" id="Theme_g4vhq"]
@@ -34,40 +35,37 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Teeth infected: 0"
 
-[node name="CharacterBody2D4" parent="." instance=ExtResource("3_jriv1")]
-position = Vector2(1347, 220)
-puntos = PackedVector2Array(1500, 300)
-
-[node name="CharacterBody2D2" parent="." instance=ExtResource("3_jriv1")]
-position = Vector2(1055, 437.25)
-scale = Vector2(0.75, 0.75)
-puntos = PackedVector2Array(1168, 55, 500, 200, 4, 52, 900, 30)
-
-[node name="CharacterBody2D3" parent="." instance=ExtResource("3_jriv1")]
-position = Vector2(606.5, 806.25)
-scale = Vector2(0.75, 0.75)
-puntos = PackedVector2Array(570, 547, 500, 50, 100, 50)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(768, 435)
 
-[node name="CharacterBody2D" parent="." instance=ExtResource("3_jriv1")]
-position = Vector2(52, 52)
-puntos = PackedVector2Array(52, 52, 100, 200, 800, 300, 0, 0)
-infectado = true
-
 [node name="Ruta" parent="." instance=ExtResource("4_6test")]
-position = Vector2(2, 4)
-initial_position = Vector2(200, 50)
+initial_position = Vector2(1480, 120)
 
 [node name="Camilla" parent="." instance=ExtResource("5_dqjgg")]
-position = Vector2(743, 224)
+position = Vector2(54, 179)
 
 [node name="sofa" parent="." instance=ExtResource("6_d44dq")]
-position = Vector2(1491, 778)
+position = Vector2(1487, 776)
 
 [node name="sofa2" parent="." instance=ExtResource("6_d44dq")]
-position = Vector2(1417, 506)
+position = Vector2(1118, 777)
 flip_horizontal = true
-flip_vertical = true
-color = Vector3(0.4, 0.4, 0.4)
+
+[node name="camilla2" parent="." instance=ExtResource("6_7cyp1")]
+position = Vector2(413, 163)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(1419, 189)
+puntos = PackedVector2Array(1400, 200, 600, 300)
+
+[node name="CharacterBody2D2" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(975, 691)
+puntos = PackedVector2Array(950, 700, 600, 500, 400, 400, 100, 800)
+
+[node name="CharacterBody2D3" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(192, 298)
+puntos = PackedVector2Array(200, 300, 170, 500, 300, 150)
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(1441, 522)
+puntos = PackedVector2Array(1400, 500, 1000, 600, 1200, 800)

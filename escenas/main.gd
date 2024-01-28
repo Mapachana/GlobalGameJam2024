@@ -3,7 +3,7 @@ extends Node2D
 #signal sumarpunto
 # Called when the node enters the scene tree for the first time.
 
-const TIEMPO_MAXIMO = 6
+const TIEMPO_MAXIMO = 12
 
 var personajes_escena
 var contador

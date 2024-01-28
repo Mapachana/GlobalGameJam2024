@@ -105,6 +105,7 @@ _data = {
 radius = 186.936
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.75, 0.75)
 script = ExtResource("1_bsgrh")
 puntos = PackedVector2Array(0, 0, 500, 0, 800, 300)
 
