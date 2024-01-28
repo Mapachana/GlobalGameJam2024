@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://7lwiisvgtl8v"]
+
+[ext_resource type="Texture2D" uid="uid://c4q7psiec8ile" path="res://graficos/rectanguloverde.png" id="1_4jw0q"]
+[ext_resource type="Script" path="res://escenas/titulo.gd" id="2_3d6k0"]
+
+[sub_resource type="Theme" id="Theme_viyov"]
+
+[sub_resource type="Theme" id="Theme_6tdiw"]
+
+[sub_resource type="Theme" id="Theme_046t1"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1585.0
+offset_bottom = 911.0
+texture = ExtResource("1_4jw0q")
+script = ExtResource("2_3d6k0")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 687.0
+offset_top = 561.0
+offset_right = 695.0
+offset_bottom = 569.0
+theme = SubResource("Theme_viyov")
+theme_override_font_sizes/font_size = 50
+text = "Start"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 272.0
+offset_right = 2272.0
+offset_bottom = 359.0
+theme = SubResource("Theme_6tdiw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Pulsa y arrastra para crear la ruta del gas de la risa. Pulsa la bombona 
+de nuevo para explotarla y contagia al mayor número de dients posible!"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = SubResource("Theme_046t1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "JUEGUICO DE LA JAM OLEEE"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
