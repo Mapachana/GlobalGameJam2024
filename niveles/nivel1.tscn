@@ -1,0 +1,247 @@
+[gd_scene load_steps=15 format=3 uid="uid://db33d4v58vxfq"]
+
+[ext_resource type="Script" path="res://escenas/main.gd" id="1_g51f8"]
+[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_7rbxi"]
+[ext_resource type="Texture2D" uid="uid://batsrthue0kh7" path="res://graficos/FONDO_muros.png" id="3_4om0g"]
+[ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_belo0"]
+[ext_resource type="Script" path="res://niveles/ControTutoriall.gd" id="4_gmo5h"]
+[ext_resource type="PackedScene" uid="uid://barh8turppqhr" path="res://camilla.tscn" id="5_af3ay"]
+[ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="6_4eeuq"]
+[ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="7_hc20v"]
+[ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="8_njpqd"]
+
+[sub_resource type="Theme" id="Theme_g4vhq"]
+
+[sub_resource type="Animation" id="Animation_imfu2"]
+resource_name = "parar"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("consejo_arrastrar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("consejo_arrastrar2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("consejo_arrastrar3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x0nao"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("consejo_arrastrar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("consejo_arrastrar2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("consejo_arrastrar3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_oomac"]
+resource_name = "tutorial"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("consejo_arrastrar:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5, 8.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("consejo_arrastrar2:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 9.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("consejo_arrastrar3:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 14.8, 19.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_itjru"]
+_data = {
+"RESET": SubResource("Animation_x0nao"),
+"parar": SubResource("Animation_imfu2"),
+"tutorial": SubResource("Animation_oomac")
+}
+
+[node name="Nivel1" type="Node2D"]
+script = ExtResource("1_g51f8")
+
+[node name="suelo" type="Sprite2D" parent="."]
+position = Vector2(767, 434)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_7rbxi")
+
+[node name="color_fondo" type="Sprite2D" parent="."]
+position = Vector2(767, 430)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_4om0g")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("4_gmo5h")
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 15.0
+offset_right = 1519.0
+offset_bottom = 82.0
+theme = SubResource("Theme_g4vhq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Teeth infected: 0"
+
+[node name="consejo_arrastrar" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 1119.0
+offset_top = 545.0
+offset_right = 1484.0
+offset_bottom = 842.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Dibuja el camino que seguirá la bombona, y pincha para que explote la risa..."
+autowrap_mode = 2
+
+[node name="consejo_arrastrar2" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 572.0
+offset_top = 69.0
+offset_right = 937.0
+offset_bottom = 366.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Vamos a ver, que arrastres la botella, para que explote cerca de la muela..."
+autowrap_mode = 2
+
+[node name="consejo_arrastrar3" type="Label" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 223.0
+offset_top = 393.0
+offset_right = 588.0
+offset_bottom = 690.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 41
+text = "Esto es una muela, ¿no la ves?"
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Control"]
+libraries = {
+"": SubResource("AnimationLibrary_itjru")
+}
+autoplay = "tutorial"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 435)
+
+[node name="Ruta" parent="." instance=ExtResource("4_belo0")]
+initial_position = Vector2(522, 119)
+
+[node name="Muelas" type="Node2D" parent="."]
+
+[node name="CharacterBody2D3" parent="Muelas" instance=ExtResource("8_njpqd")]
+position = Vector2(200, 200)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/CharacterBody2D3"]
+position = Vector2(-14.6667, 738.667)
+
+[node name="Mobiliario" type="Node2D" parent="."]
+
+[node name="Camilla" parent="Mobiliario" instance=ExtResource("5_af3ay")]
+position = Vector2(993, 142)
+
+[node name="sofa" parent="Mobiliario" instance=ExtResource("6_4eeuq")]
+position = Vector2(1486, 255)
+scale = Vector2(0.781482, 0.743028)
+
+[node name="sofa2" parent="Mobiliario" instance=ExtResource("6_4eeuq")]
+position = Vector2(980, 754)
+scale = Vector2(0.855556, 0.766932)
+flip_horizontal = true
+
+[node name="camilla2" parent="Mobiliario" instance=ExtResource("7_hc20v")]
+position = Vector2(413, 163)
+
+[connection signal="trazado" from="Ruta" to="Control" method="_on_ruta_trazado"]
+
+[editable path="Ruta"]

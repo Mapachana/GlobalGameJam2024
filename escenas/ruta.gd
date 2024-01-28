@@ -1,10 +1,13 @@
 extends Node2D
 
+signal trazado()
 
 var ruta=[]
 
 const intervalo_puntos=10
 const offset=5
+
+var andando = false
 
 enum {sin_iniciar,iniciado,final}
 
@@ -150,5 +153,8 @@ func _unhandled_input(event):
 			elif event.pressed==false:
 				parar_ruta()			
 		if  (event is InputEventScreenDrag): # (event is InputEventScreenTouch) or
+			if not andando:
+				emit_signal("trazado")
+				andando=false
 			seguir_ruta()	
 			

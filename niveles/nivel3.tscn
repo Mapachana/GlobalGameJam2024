@@ -1,0 +1,194 @@
+[gd_scene load_steps=10 format=3 uid="uid://dkx4ovmahbavr"]
+
+[ext_resource type="Script" path="res://escenas/main.gd" id="1_jn1mx"]
+[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_aytng"]
+[ext_resource type="Texture2D" uid="uid://batsrthue0kh7" path="res://graficos/FONDO_muros.png" id="3_xdowl"]
+[ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_kt13p"]
+[ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="5_th6d0"]
+[ext_resource type="PackedScene" uid="uid://barh8turppqhr" path="res://camilla.tscn" id="6_btegh"]
+[ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="7_uw1hw"]
+[ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="8_4d8pf"]
+
+[sub_resource type="Theme" id="Theme_g4vhq"]
+
+[node name="Nivel3" type="Node2D"]
+script = ExtResource("1_jn1mx")
+
+[node name="suelo" type="Sprite2D" parent="."]
+position = Vector2(767, 434)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_aytng")
+
+[node name="color_fondo" type="Sprite2D" parent="."]
+position = Vector2(767, 430)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_xdowl")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 15.0
+offset_right = 1519.0
+offset_bottom = 82.0
+theme = SubResource("Theme_g4vhq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Teeth infected: 0"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 435)
+
+[node name="Ruta" parent="." instance=ExtResource("4_kt13p")]
+initial_position = Vector2(522, 119)
+
+[node name="Muelas" type="Node2D" parent="."]
+
+[node name="muela1" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(399, 140)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(0, 221.333)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(462.667, 216)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(462.667, 1.52588e-05)
+
+[node name="muela2" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(1464, 123)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-664, 18.6667)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-666.667, 125.333)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-885.333, 113.333)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-857.333, 596)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-449.333, 601.333)
+
+[node name="paso6" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-442.667, 910.667)
+
+[node name="muela3" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(951, 779)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela3"]
+position = Vector2(-278.667, 21.3333)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela3"]
+position = Vector2(-278.667, -306.667)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela3"]
+position = Vector2(584, -301.333)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela3"]
+position = Vector2(605.333, -24)
+
+[node name="muela4" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(233, 772)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-254.667, -5.33343)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-254.667, -382.667)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-48, -388)
+rotation = 2.41755
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-45.3333, -834.667)
+rotation = 2.41755
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-254.667, -858.667)
+rotation = 2.41755
+
+[node name="muela5" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(42, 287)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(198.667, 85.3332)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(214.667, 264)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(710.667, 240)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(701.333, 361.333)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(452, 394.667)
+
+[node name="paso6" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(340, 442.667)
+
+[node name="paso7" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(349.333, 573.333)
+
+[node name="paso8" type="Marker2D" parent="Muelas/muela5"]
+position = Vector2(344, 661.333)
+
+[node name="muela6" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(1471, 495)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-17.3333, 406.667)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-425.333, 425.333)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-458.667, 90.6667)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-373.333, 81.3333)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-378.667, -249.333)
+rotation = -1.61832
+
+[node name="paso6" type="Marker2D" parent="Muelas/muela6"]
+position = Vector2(-120, -261.333)
+rotation = -1.61832
+
+[node name="Mobiliario" type="Node2D" parent="."]
+
+[node name="Camilla" parent="Mobiliario" instance=ExtResource("6_btegh")]
+position = Vector2(572, 167)
+
+[node name="sofa" parent="Mobiliario" instance=ExtResource("7_uw1hw")]
+position = Vector2(1486, 255)
+scale = Vector2(0.781482, 0.743028)
+
+[node name="sofa2" parent="Mobiliario" instance=ExtResource("7_uw1hw")]
+position = Vector2(558, 754)
+scale = Vector2(0.855556, 0.766932)
+flip_horizontal = true
+
+[node name="camilla2" parent="Mobiliario" instance=ExtResource("8_4d8pf")]
+position = Vector2(404, 767)
+
+[editable path="Ruta"]

@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://7b1eqhxfa816"]
+
+[ext_resource type="Script" path="res://escenas/main.gd" id="1_kubnn"]
+[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_506xy"]
+[ext_resource type="Texture2D" uid="uid://batsrthue0kh7" path="res://graficos/FONDO_muros.png" id="3_cfnjk"]
+[ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_ft73s"]
+[ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="5_5xc2w"]
+[ext_resource type="PackedScene" uid="uid://barh8turppqhr" path="res://camilla.tscn" id="6_rqjth"]
+[ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="7_fd606"]
+[ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="8_7q6wd"]
+
+[sub_resource type="Theme" id="Theme_g4vhq"]
+
+[node name="Nivel2" type="Node2D"]
+script = ExtResource("1_kubnn")
+
+[node name="suelo" type="Sprite2D" parent="."]
+position = Vector2(767, 434)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_506xy")
+flip_h = true
+
+[node name="color_fondo" type="Sprite2D" parent="."]
+position = Vector2(767, 430)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("3_cfnjk")
+flip_h = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1330.0
+offset_top = 15.0
+offset_right = 1519.0
+offset_bottom = 82.0
+theme = SubResource("Theme_g4vhq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 23
+text = "Teeth infected: 0"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(768, 435)
+
+[node name="Ruta" parent="." instance=ExtResource("4_ft73s")]
+initial_position = Vector2(522, 119)
+
+[node name="Muelas" type="Node2D" parent="."]
+
+[node name="muela1" parent="Muelas" instance=ExtResource("5_5xc2w")]
+position = Vector2(173, 186)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(-9.33335, 793.333)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(236, 800)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(250.667, 496)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(761.333, 505.333)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(764, 113.333)
+
+[node name="paso6" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(654.667, 498.667)
+
+[node name="paso7" type="Marker2D" parent="Muelas/muela1"]
+position = Vector2(17.3333, 510.667)
+
+[node name="muela2" parent="Muelas" instance=ExtResource("5_5xc2w")]
+position = Vector2(1437, 752)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-353.333, 18.6667)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-374.667, -261.333)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-881.333, -252)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-888, 58.6667)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-1192, 85.3333)
+
+[node name="paso6" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-906.667, -52)
+
+[node name="paso7" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-906.667, -249.333)
+
+[node name="paso8" type="Marker2D" parent="Muelas/muela2"]
+position = Vector2(-345.333, -252)
+
+[node name="Mobiliario" type="Node2D" parent="."]
+
+[node name="Camilla" parent="Mobiliario" instance=ExtResource("6_rqjth")]
+position = Vector2(993, 142)
+
+[node name="sofa" parent="Mobiliario" instance=ExtResource("7_fd606")]
+position = Vector2(1486, 255)
+scale = Vector2(0.781482, 0.743028)
+
+[node name="sofa2" parent="Mobiliario" instance=ExtResource("7_fd606")]
+position = Vector2(980, 754)
+scale = Vector2(0.855556, 0.766932)
+
+[node name="camilla2" parent="Mobiliario" instance=ExtResource("8_7q6wd")]
+position = Vector2(413, 163)
+
+[editable path="Ruta"]
