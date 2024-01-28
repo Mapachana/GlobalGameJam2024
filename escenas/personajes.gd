@@ -17,6 +17,8 @@ var temporizador
 var puntos_vuelta
 var orientacion
 
+var risa
+
 @onready var sombreador_muerte = preload("res://graficos/muerto.gdshader")
 
 
@@ -39,8 +41,10 @@ func _ready():
 	
 	if orientacion <= 0.5:
 		orientacion = 1
+		risa = "res://musica/risa1.mp3"
 	else:
 		orientacion = -1
+		risa = "res://musica/risa2.mp3"
 	
 	$AnimationPlayer.play("quieta")
 	
@@ -89,7 +93,7 @@ func _physics_process(delta):
 				pass
 				
 			if !$AudioStreamPlayer.is_playing():
-				#$AudioStreamPlayer.stream = "res://musica/03-jijii - stem-consolidated.mp3"
+				$AudioStreamPlayer.stream = load(risa)
 				$AudioStreamPlayer.play()
 		
 			if temporizador >= TIEMPO_MAX_INFECTADO:

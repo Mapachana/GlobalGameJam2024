@@ -1,7 +1,6 @@
 extends Node2D
 
 signal trazado()
-signal explotado()
 
 var ruta=[]
 
@@ -22,6 +21,8 @@ var total_pasos=-1
 var indice_paso=0
 var siguiente_objetivo=null
 
+var sonido_ya = false
+
 @export
 var contenido=100
 
@@ -40,7 +41,11 @@ const TIEMPO_DESAPARECER = 4
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_ruta()
-
+	sonido_ya = false
+	tiempo_carga = 0
+	tiempo_exp = 0
+	explotada = false
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	tiempo_carga += delta
@@ -49,7 +54,9 @@ func _process(delta):
 		if explotada:
 			tiempo_exp += delta
 			if tiempo_exp >= TIEMPO_DESAPARECER:
+				$AudioStreamPlayer.stop()
 				queue_free()
+				
 	
 		if estado!=final:
 			if Input.is_action_pressed("pinchar"):
@@ -61,6 +68,10 @@ func _process(delta):
 				if contenido>0:
 					$MuelaParada/AnimationPlayerHumo.play("flusss")	
 					explotada = true
+					if !$AudioStreamPlayer.is_playing() and !sonido_ya:
+						$AudioStreamPlayer.stream = load("res://musica/explotar.mp3")
+						$AudioStreamPlayer.play()
+						sonido_ya = true
 					
 
 		
@@ -76,12 +87,19 @@ func _process(delta):
 			else:
 				$MuelaParada/AnimationPlayerHumo.play("flusss")
 				explotada = true
+				if !$AudioStreamPlayer.is_playing() and !sonido_ya:
+						$AudioStreamPlayer.stream = load("res://musica/explotar.mp3")
+						$AudioStreamPlayer.play()
+						sonido_ya = true
 				
 				
 		else:
 			$MuelaParada/AnimationPlayerHumo.play("flusss")
 			explotada = true
-			emit_signal("explotado")
+			if !$AudioStreamPlayer.is_playing() and !sonido_ya:
+						$AudioStreamPlayer.stream = load("res://musica/explotar.mp3")
+						$AudioStreamPlayer.play()
+						sonido_ya = true
 			
 
 				
