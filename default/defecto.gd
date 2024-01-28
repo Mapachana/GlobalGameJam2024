@@ -4,13 +4,14 @@ var debug=true
 
 var current_scene = null
 
-var puntuacion = 0
+var puntuacion
 
 #signal sumarpunto(punt)
 
 func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
+	puntuacion = 0
 	
 func sumar_puntuacion():
 	print("SUMOOOOOOOOOOOOOOO")

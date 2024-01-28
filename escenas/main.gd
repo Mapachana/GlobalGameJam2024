@@ -22,7 +22,7 @@ func _process(delta):
 	contador += delta
 	
 	if contador >= TIEMPO_MAXIMO:
-		print("FIN DE TIEMPO")
+		Globales.goto_scene("res://escenas/creditos.tscn")
 	pass
 
 func mostrar_puntuacion(punt):
@@ -39,10 +39,8 @@ func mostrar_puntuacion(punt):
 		i += 1
 	
 	if todos_muertos:
-		print("GANAS")
-		pass
+		Globales.goto_scene("res://escenas/creditos.tscn")
 	else:
-		print("FINNN")
 		contador = 0
 		
 
