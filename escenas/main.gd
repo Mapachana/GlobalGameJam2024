@@ -30,7 +30,7 @@ func _process(delta):
 	pass
 
 func mostrar_puntuacion(punt):
-	var puntos_pantalla = "Teeth infected: %s"%punt
+	var puntos_pantalla = "Teeth laughing: %s"%punt
 	$Control/Label.text = puntos_pantalla
 	
 	personajes_escena = get_tree().get_nodes_in_group("personajes")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dkx4ovmahbavr"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jn1mx"]
-[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_aytng"]
+[ext_resource type="Texture2D" uid="uid://pi3s04m46rpb" path="res://graficos/FONDO_suelo.png" id="2_p6uua"]
 [ext_resource type="Texture2D" uid="uid://batsrthue0kh7" path="res://graficos/FONDO_muros.png" id="3_xdowl"]
 [ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_kt13p"]
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="5_th6d0"]
@@ -17,7 +17,7 @@ script = ExtResource("1_jn1mx")
 [node name="suelo" type="Sprite2D" parent="."]
 position = Vector2(767, 434)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_aytng")
+texture = ExtResource("2_p6uua")
 
 [node name="color_fondo" type="Sprite2D" parent="."]
 position = Vector2(767, 430)
@@ -39,7 +39,7 @@ offset_bottom = 82.0
 theme = SubResource("Theme_g4vhq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
-text = "Teeth infected: 0"
+text = "Teeth laughing: 0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(768, 435)
@@ -173,13 +173,13 @@ position = Vector2(-17.3333, 406.667)
 position = Vector2(-425.333, 425.333)
 
 [node name="paso3" type="Marker2D" parent="Muelas/muela6"]
-position = Vector2(-458.667, 90.6667)
+position = Vector2(-564, 25.3334)
 
 [node name="paso4" type="Marker2D" parent="Muelas/muela6"]
-position = Vector2(-373.333, 81.3333)
+position = Vector2(-424, 280)
 
 [node name="paso5" type="Marker2D" parent="Muelas/muela6"]
-position = Vector2(-378.667, -249.333)
+position = Vector2(-600, -264)
 rotation = -1.61832
 
 [node name="paso6" type="Marker2D" parent="Muelas/muela6"]
