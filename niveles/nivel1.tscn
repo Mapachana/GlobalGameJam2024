@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://db33d4v58vxfq"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_g51f8"]
-[ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_7rbxi"]
+[ext_resource type="Texture2D" uid="uid://pi3s04m46rpb" path="res://graficos/FONDO_suelo.png" id="2_0d4ix"]
 [ext_resource type="Texture2D" uid="uid://batsrthue0kh7" path="res://graficos/FONDO_muros.png" id="3_4om0g"]
 [ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_belo0"]
 [ext_resource type="Script" path="res://niveles/ControTutoriall.gd" id="4_gmo5h"]
@@ -143,7 +143,7 @@ script = ExtResource("1_g51f8")
 [node name="suelo" type="Sprite2D" parent="."]
 position = Vector2(767, 434)
 scale = Vector2(0.8, 0.8)
-texture = ExtResource("2_7rbxi")
+texture = ExtResource("2_0d4ix")
 
 [node name="color_fondo" type="Sprite2D" parent="."]
 position = Vector2(767, 430)
