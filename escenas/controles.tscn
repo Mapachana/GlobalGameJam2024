@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bn70ssvfbck25"]
+
+[ext_resource type="Texture2D" uid="uid://bffnnl6gs3672" path="res://graficos/rectangulonegro.png" id="1_o2jfg"]
+[ext_resource type="Script" path="res://escenas/controles.gd" id="2_vr07q"]
+
+[sub_resource type="Theme" id="Theme_viyov"]
+
+[sub_resource type="Theme" id="Theme_6tdiw"]
+
+[sub_resource type="Theme" id="Theme_046t1"]
+
+[node name="TextureRect" type="TextureRect"]
+offset_right = 1585.0
+offset_bottom = 911.0
+texture = ExtResource("1_o2jfg")
+script = ExtResource("2_vr07q")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 550.0
+offset_right = 900.0
+offset_bottom = 645.0
+theme = SubResource("Theme_viyov")
+theme_override_font_sizes/font_size = 50
+text = "Menu"
+
+[node name="LabelScore" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 570.0
+offset_top = 213.0
+offset_right = 2618.0
+offset_bottom = 390.0
+theme = SubResource("Theme_6tdiw")
+theme_override_font_sizes/font_size = 60
+text = "Score: 0"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 281.0
+offset_right = 2223.0
+offset_bottom = 458.0
+theme = SubResource("Theme_6tdiw")
+theme_override_font_sizes/font_size = 35
+text = "Click and drag through the map to draw the route for the gas.
+Click again on the gas to make it blow up and infect the teeth.
+And remember... laugh is contagious!"
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 46.0
+offset_right = 1036.0
+offset_bottom = 183.0
+theme = SubResource("Theme_046t1")
+theme_override_font_sizes/font_size = 100
+text = "CONTROLS"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
