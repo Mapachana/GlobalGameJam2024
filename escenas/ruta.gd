@@ -26,21 +26,28 @@ var velocidad=5
 
 @export var initial_position = Vector2.ZERO
 
+var tiempo_carga = 0
+const MIN_TIEMPO = 0.3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_ruta()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if estado!=final:
-		if Input.is_action_pressed("pinchar"):
-			seguir_ruta()
-		elif Input.is_action_just_released("pinchar"):
-			parar_ruta()	
-	else:
-		if Input.is_action_pressed("pinchar"):
-			if contenido>0:
-				$MuelaParada/AnimationPlayerHumo.play("flusss")	
+	tiempo_carga += delta
+	
+	if tiempo_carga >= MIN_TIEMPO:
+	
+		if estado!=final:
+			if Input.is_action_pressed("pinchar"):
+				seguir_ruta()
+			elif Input.is_action_just_released("pinchar"):
+				parar_ruta()	
+		else:
+			if Input.is_action_pressed("pinchar"):
+				if contenido>0:
+					$MuelaParada/AnimationPlayerHumo.play("flusss")	
 
 		
 	if estado==final:
