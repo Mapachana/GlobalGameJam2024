@@ -10,7 +10,7 @@ func _process(delta):
 	
 # Empezar partida
 func _on_button_pressed():
-	Globales.goto_scene("res://niveles/nivel3.tscn")
+	Globales.goto_scene("res://escenas/main.tscn")
 	pass # Replace with function body.
 
 # Ver controles
