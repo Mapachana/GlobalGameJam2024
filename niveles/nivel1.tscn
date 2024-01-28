@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://db33d4v58vxfq"]
+[gd_scene load_steps=16 format=3 uid="uid://db33d4v58vxfq"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_g51f8"]
 [ext_resource type="Texture2D" uid="uid://pi3s04m46rpb" path="res://graficos/FONDO_suelo.png" id="2_0d4ix"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="6_4eeuq"]
 [ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="7_hc20v"]
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="8_njpqd"]
+[ext_resource type="AudioStream" uid="uid://bbshyq8kswnxk" path="res://musica/GGJ2024.ogg" id="10_0kx1x"]
 
 [sub_resource type="Theme" id="Theme_g4vhq"]
 
@@ -303,6 +304,10 @@ flip_horizontal = true
 
 [node name="camilla2" parent="Mobiliario" instance=ExtResource("7_hc20v")]
 position = Vector2(413, 163)
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0kx1x")
+autoplay = true
 
 [connection signal="trazado" from="Ruta" to="Control" method="_on_ruta_trazado"]
 
