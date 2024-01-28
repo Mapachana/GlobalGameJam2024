@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://7lwiisvgtl8v"]
+[gd_scene load_steps=7 format=3 uid="uid://7lwiisvgtl8v"]
 
 [ext_resource type="Texture2D" uid="uid://bffnnl6gs3672" path="res://graficos/rectangulonegro.png" id="1_jedfl"]
 [ext_resource type="Script" path="res://escenas/titulo.gd" id="2_3d6k0"]
+[ext_resource type="Texture2D" uid="uid://ctaypywrkk05c" path="res://graficos/INICIO.jpg" id="3_vdvr5"]
 
 [sub_resource type="Theme" id="Theme_viyov"]
 
@@ -10,17 +11,17 @@
 [sub_resource type="Theme" id="Theme_046t1"]
 
 [node name="TextureRect" type="TextureRect"]
-offset_right = 1585.0
-offset_bottom = 911.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 texture = ExtResource("1_jedfl")
 script = ExtResource("2_3d6k0")
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
 offset_left = 866.0
-offset_top = 550.0
+offset_top = 635.0
 offset_right = 1116.0
-offset_bottom = 645.0
+offset_bottom = 730.0
 theme = SubResource("Theme_viyov")
 theme_override_font_sizes/font_size = 50
 text = "Controls
@@ -29,9 +30,9 @@ text = "Controls
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 400.0
-offset_top = 550.0
+offset_top = 635.0
 offset_right = 650.0
-offset_bottom = 645.0
+offset_bottom = 730.0
 theme = SubResource("Theme_viyov")
 theme_override_font_sizes/font_size = 50
 text = "Start"
@@ -50,13 +51,22 @@ de nuevo para explotarla y contagia al mayor número de dients posible!"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 96.0
-offset_right = 1460.0
-offset_bottom = 233.0
+offset_left = 422.0
+offset_top = 110.0
+offset_right = 1744.0
+offset_bottom = 247.0
 theme = SubResource("Theme_046t1")
 theme_override_font_sizes/font_size = 100
-text = "Crooked teeth laugh"
+text = "Crooked teeth"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 297.0
+offset_right = 2423.0
+offset_bottom = 1377.0
+scale = Vector2(0.271583, 0.271583)
+texture = ExtResource("3_vdvr5")
 
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
