@@ -15,7 +15,8 @@ func _ready():
 	contador = 0
 	
 	#Bad Juanjo
-	asignar_camino_extra()
+	if get_node_or_null("Muelas")!= null:
+		asignar_camino_extra()
 	
 	pass # Replace with function body.
 
