@@ -29,6 +29,10 @@ var velocidad=5
 var tiempo_carga = 0
 const MIN_TIEMPO = 0.3
 
+var explotada = false
+var tiempo_exp = 0
+const TIEMPO_DESAPARECER = 4
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	setup_ruta()
@@ -38,6 +42,10 @@ func _process(delta):
 	tiempo_carga += delta
 	
 	if tiempo_carga >= MIN_TIEMPO:
+		if explotada:
+			tiempo_exp += delta
+			if tiempo_exp >= TIEMPO_DESAPARECER:
+				queue_free()
 	
 		if estado!=final:
 			if Input.is_action_pressed("pinchar"):
@@ -48,6 +56,8 @@ func _process(delta):
 			if Input.is_action_pressed("pinchar"):
 				if contenido>0:
 					$MuelaParada/AnimationPlayerHumo.play("flusss")	
+					explotada = true
+					
 
 		
 	if estado==final:
@@ -61,9 +71,13 @@ func _process(delta):
 				$MuelaParada.position=$MuelaParada.position+(siguiente_objetivo-$MuelaParada.position).normalized()*velocidad
 			else:
 				$MuelaParada/AnimationPlayerHumo.play("flusss")
+				explotada = true
+				
 				
 		else:
 			$MuelaParada/AnimationPlayerHumo.play("flusss")
+			explotada = true
+			
 
 				
 		#$Path2D/PathFollow2D.set_progress(progreso)
