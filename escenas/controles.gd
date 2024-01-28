@@ -14,3 +14,8 @@ func _process(delta):
 func _on_button_pressed():
 	Globales.goto_scene("res://escenas/titulo.tscn")
 	pass # Replace with function body.
+
+
+func _on_tuto_pressed():
+	Globales.goto_scene("res://niveles/nivel1.tscn")
+	pass # Replace with function body.

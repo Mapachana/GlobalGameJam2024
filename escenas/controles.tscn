@@ -17,9 +17,9 @@ script = ExtResource("2_vr07q")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 650.0
+offset_left = 874.0
 offset_top = 550.0
-offset_right = 900.0
+offset_right = 1124.0
 offset_bottom = 645.0
 theme = SubResource("Theme_viyov")
 theme_override_font_sizes/font_size = 50
@@ -38,9 +38,9 @@ text = "Score: 0"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 175.0
+offset_left = 227.0
 offset_top = 281.0
-offset_right = 2223.0
+offset_right = 2275.0
 offset_bottom = 458.0
 theme = SubResource("Theme_6tdiw")
 theme_override_font_sizes/font_size = 35
@@ -58,4 +58,14 @@ theme = SubResource("Theme_046t1")
 theme_override_font_sizes/font_size = 100
 text = "CONTROLS"
 
+[node name="tuto" type="Button" parent="."]
+offset_left = 426.0
+offset_top = 550.0
+offset_right = 676.0
+offset_bottom = 645.0
+theme = SubResource("Theme_viyov")
+theme_override_font_sizes/font_size = 50
+text = "Tutorial"
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="tuto" to="." method="_on_tuto_pressed"]

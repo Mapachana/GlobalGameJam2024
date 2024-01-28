@@ -18,9 +18,9 @@ script = ExtResource("2_8cx3x")
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 650.0
-offset_top = 550.0
+offset_top = 635.0
 offset_right = 900.0
-offset_bottom = 645.0
+offset_bottom = 730.0
 theme = SubResource("Theme_viyov")
 theme_override_font_sizes/font_size = 50
 text = "Menu"
@@ -28,9 +28,9 @@ text = "Menu"
 [node name="LabelScore" type="Label" parent="."]
 layout_mode = 0
 offset_left = 570.0
-offset_top = 213.0
+offset_top = 228.0
 offset_right = 2618.0
-offset_bottom = 390.0
+offset_bottom = 405.0
 theme = SubResource("Theme_6tdiw")
 theme_override_font_sizes/font_size = 60
 text = "Score: 0"
@@ -38,9 +38,9 @@ text = "Score: 0"
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
 offset_left = 203.0
-offset_top = 331.0
+offset_top = 374.0
 offset_right = 2251.0
-offset_bottom = 508.0
+offset_bottom = 551.0
 theme = SubResource("Theme_6tdiw")
 theme_override_font_sizes/font_size = 30
 text = "Credits: 
