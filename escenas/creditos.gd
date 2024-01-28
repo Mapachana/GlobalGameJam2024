@@ -3,6 +3,8 @@ extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var texto_punt = "Score: %s"%Globales.puntuacion
+	$LabelScore.text = texto_punt
 	pass # Replace with function body.
 
 
@@ -12,6 +14,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	Globales.reiniciar_puntuacion()
 	Globales.goto_scene("res://escenas/main.tscn")
 	pass # Replace with function body.

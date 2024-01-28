@@ -49,11 +49,11 @@ de nuevo para explotarla y contagia al mayor número de dients posible!"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 132.0
+offset_top = 54.0
+offset_right = 1454.0
+offset_bottom = 191.0
 theme = SubResource("Theme_046t1")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "JUEGUICO DE LA JAM OLEEE"
 

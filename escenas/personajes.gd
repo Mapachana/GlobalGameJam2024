@@ -61,6 +61,7 @@ func _physics_process(delta):
 				#print(position.distance_to(target))
 				target_index = fmod(target_index+1, puntos_vuelta.size())
 				target = puntos_vuelta[target_index]
+		
 		# Si estoy infectado me muevo en circulos
 		else:
 			$AnimationPlayer.play("risa_lengua")
