@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://7lwiisvgtl8v"]
 
-[ext_resource type="Texture2D" uid="uid://bffnnl6gs3672" path="res://graficos/rectangulonegro.png" id="1_jedfl"]
+[ext_resource type="Texture2D" uid="uid://d1uxq17ueaatg" path="res://graficos/rectangulomorado.png" id="1_o66wa"]
 [ext_resource type="Script" path="res://escenas/titulo.gd" id="2_3d6k0"]
 [ext_resource type="Texture2D" uid="uid://ctaypywrkk05c" path="res://graficos/INICIO.jpg" id="3_vdvr5"]
 
@@ -13,7 +13,7 @@
 [node name="TextureRect" type="TextureRect"]
 offset_right = 1920.0
 offset_bottom = 1080.0
-texture = ExtResource("1_jedfl")
+texture = ExtResource("1_o66wa")
 script = ExtResource("2_3d6k0")
 
 [node name="Button2" type="Button" parent="."]

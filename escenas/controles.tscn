@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bn70ssvfbck25"]
 
-[ext_resource type="Texture2D" uid="uid://bffnnl6gs3672" path="res://graficos/rectangulonegro.png" id="1_o2jfg"]
+[ext_resource type="Texture2D" uid="uid://d1uxq17ueaatg" path="res://graficos/rectangulomorado.png" id="1_dvtxt"]
 [ext_resource type="Script" path="res://escenas/controles.gd" id="2_vr07q"]
 
 [sub_resource type="Theme" id="Theme_viyov"]
@@ -12,7 +12,7 @@
 [node name="TextureRect" type="TextureRect"]
 offset_right = 1585.0
 offset_bottom = 911.0
-texture = ExtResource("1_o2jfg")
+texture = ExtResource("1_dvtxt")
 script = ExtResource("2_vr07q")
 
 [node name="Button" type="Button" parent="."]
@@ -43,6 +43,7 @@ offset_top = 281.0
 offset_right = 2275.0
 offset_bottom = 458.0
 theme = SubResource("Theme_6tdiw")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 35
 text = "Click and drag through the map to draw the route for the gas.
 Click again on the gas to make it blow up and infect the teeth.
@@ -55,6 +56,7 @@ offset_top = 46.0
 offset_right = 1036.0
 offset_bottom = 183.0
 theme = SubResource("Theme_046t1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 100
 text = "CONTROLS"
 
