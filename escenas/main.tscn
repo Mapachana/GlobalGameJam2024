@@ -23,12 +23,18 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="Control"]
 layout_mode = 0
-offset_right = 189.0
-offset_bottom = 67.0
+offset_left = 1330.0
+offset_top = 15.0
+offset_right = 1519.0
+offset_bottom = 82.0
 theme = SubResource("Theme_g4vhq")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 23
 text = "Teeth infected: 0"
+
+[node name="CharacterBody2D4" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(1347, 220)
+puntos = PackedVector2Array(1500, 300)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(1055, 437.25)
@@ -50,3 +56,4 @@ infectado = true
 
 [node name="Ruta" parent="." instance=ExtResource("4_6test")]
 position = Vector2(2, 4)
+initial_position = Vector2(200, 50)

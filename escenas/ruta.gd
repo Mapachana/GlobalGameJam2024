@@ -24,16 +24,16 @@ var contenido=100
 @export
 var velocidad=5
 
+@export var initial_position = Vector2.ZERO
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	
+	setup_ruta()
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if estado!=final:
-		if Input.is_action_just_pressed("pinchar"):
-			comenzar_ruta()
-		elif Input.is_action_pressed("pinchar"):
+		if Input.is_action_pressed("pinchar"):
 			seguir_ruta()
 		elif Input.is_action_just_released("pinchar"):
 			parar_ruta()	
@@ -47,15 +47,34 @@ func _process(delta):
 		
 		if siguiente_objetivo!=null:
 			if $MuelaParada.position.distance_to(siguiente_objetivo)<offset:
-				indice_paso=clamp(indice_paso+1,0,total_pasos-1)
+				#indice_paso=clamp(indice_paso+1,0,total_pasos-1)
+				indice_paso += 1
 				siguiente_objetivo=$Line2D.get_point_position(indice_paso)
-			$MuelaParada.position=$MuelaParada.position+(siguiente_objetivo-$MuelaParada.position).normalized()*velocidad
-			
+			if indice_paso < len(ruta):
+				$MuelaParada.position=$MuelaParada.position+(siguiente_objetivo-$MuelaParada.position).normalized()*velocidad
+			else:
+				$MuelaParada/AnimationPlayerHumo.play("flusss")
+				
+		else:
+			$MuelaParada/AnimationPlayerHumo.play("flusss")
 
 				
 		#$Path2D/PathFollow2D.set_progress(progreso)
 		#progreso=clamp(progreso+delta,0,1.0)
-		
+
+func setup_ruta():
+	var punto=initial_position
+	ruta=[punto]
+	estado=sin_iniciar
+	$Line2D.add_point(punto)
+	$MuelaParada.global_position=punto
+	curva=$Path2D.get_curve()
+	primer_punto_ruta=punto
+	curva.add_point(primer_punto_ruta)
+	ultimo_punto=punto
+	
+
+
 func comenzar_ruta():
 	var punto=get_viewport().get_mouse_position()
 	ruta=[punto]
@@ -64,7 +83,7 @@ func comenzar_ruta():
 	$MuelaParada.global_position=punto
 	curva=$Path2D.get_curve()
 	primer_punto_ruta=punto
-	curva.add_point(Vector2.ZERO)
+	#curva.add_point(Vector2.ZERO)
 	ultimo_punto=punto
 	#$Path2D.points.add_point(Vector2.ZERO)
 	
@@ -75,7 +94,7 @@ func seguir_ruta():
 		ruta.append(punto)
 		estado=iniciado
 		$Line2D.add_point(punto)
-		curva.add_point(punto-primer_punto_ruta)
+		#curva.add_point(punto)
 		#$Path2D.points.add_point(punto-primer_punto_ruta)
 		ultimo_punto=punto
 	
@@ -84,26 +103,29 @@ func parar_ruta():
 	ruta.append(punto)
 	estado=final
 	$Line2D.add_point(punto)
-	curva.add_point(punto-primer_punto_ruta)
+	#curva.add_point(punto-primer_punto_ruta)
 	#$Path2D.points.add_point(punto-primer_punto_ruta)
 		
 	$Path2D.set_curve(curva)
 	total_pasos=$Line2D.get_point_count()
-	indice_paso=0
+	indice_paso=1
 	siguiente_objetivo=$Line2D.get_point_position(indice_paso)
 	
 func _on_input_event(viewport, event, shape_idx):
 	pass
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("personajes"):
+	if body.is_in_group("personajes") and !body.infectado:
 		body.infectado = true;
+		Globales.sumar_puntuacion()
+		print("aaaaaaaaaa")
 
 func _unhandled_input(event):
 	if estado!=final:
 		if event is InputEventScreenTouch:
 			if event.pressed==true:
-				comenzar_ruta()
+				#comenzar_ruta()
+				pass
 			elif event.pressed==false:
 				parar_ruta()			
 		if  (event is InputEventScreenDrag): # (event is InputEventScreenTouch) or
