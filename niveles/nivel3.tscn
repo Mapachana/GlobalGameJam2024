@@ -50,7 +50,7 @@ initial_position = Vector2(522, 119)
 [node name="Muelas" type="Node2D" parent="."]
 
 [node name="muela1" parent="Muelas" instance=ExtResource("5_th6d0")]
-position = Vector2(399, 140)
+position = Vector2(415, 136)
 puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
 
 [node name="paso1" type="Marker2D" parent="Muelas/muela1"]
@@ -122,6 +122,18 @@ rotation = 2.41755
 position = Vector2(-254.667, -858.667)
 rotation = 2.41755
 
+[node name="paso6" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-50.6667, -502.667)
+rotation = 2.41755
+
+[node name="paso7" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(-50.6667, -338.667)
+rotation = 2.41755
+
+[node name="paso8" type="Marker2D" parent="Muelas/muela4"]
+position = Vector2(374.667, -281.333)
+rotation = 2.41755
+
 [node name="muela5" parent="Muelas" instance=ExtResource("5_th6d0")]
 position = Vector2(42, 287)
 puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
@@ -174,10 +186,43 @@ rotation = -1.61832
 position = Vector2(-120, -261.333)
 rotation = -1.61832
 
+[node name="muela7" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(743, 154)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela7"]
+position = Vector2(150.667, 137.333)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela7"]
+position = Vector2(162.667, 464)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela7"]
+position = Vector2(-70.6666, 449.333)
+
+[node name="paso4" type="Marker2D" parent="Muelas/muela7"]
+position = Vector2(-37.3333, 276)
+
+[node name="paso5" type="Marker2D" parent="Muelas/muela7"]
+position = Vector2(-140, 172)
+
+[node name="muela8" parent="Muelas" instance=ExtResource("5_th6d0")]
+position = Vector2(1172, 208)
+puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+
+[node name="paso1" type="Marker2D" parent="Muelas/muela8"]
+position = Vector2(150.667, 137.333)
+
+[node name="paso2" type="Marker2D" parent="Muelas/muela8"]
+position = Vector2(13.3334, 293.333)
+
+[node name="paso3" type="Marker2D" parent="Muelas/muela8"]
+position = Vector2(148, 685.333)
+
 [node name="Mobiliario" type="Node2D" parent="."]
 
 [node name="Camilla" parent="Mobiliario" instance=ExtResource("6_btegh")]
-position = Vector2(572, 167)
+position = Vector2(291, 118)
+flip_horizontal = true
 
 [node name="sofa" parent="Mobiliario" instance=ExtResource("7_uw1hw")]
 position = Vector2(1486, 255)
