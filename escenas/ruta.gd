@@ -122,7 +122,7 @@ func _on_input_event(viewport, event, shape_idx):
 	pass
 
 func _on_area_2d_body_entered(body):
-	if body.is_in_group("personajes") and !body.infectado:
+	if body.is_in_group("personajes") and !body.muerto and !body.infectado:
 		body.infectado = true;
 		Globales.sumar_puntuacion()
 		print("aaaaaaaaaa")
