@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bkyiibuhic5o3"]
+[gd_scene load_steps=12 format=3 uid="uid://bkyiibuhic5o3"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jk5rv"]
 [ext_resource type="Texture2D" uid="uid://b08nwlcxj5c5u" path="res://graficos/fondo.jpg" id="2_lf6ij"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://barh8turppqhr" path="res://camilla.tscn" id="5_dqjgg"]
 [ext_resource type="PackedScene" uid="uid://bkecjqpa4hhxi" path="res://escenas/camilla.tscn" id="6_7cyp1"]
 [ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="6_d44dq"]
+[ext_resource type="AudioStream" uid="uid://bbshyq8kswnxk" path="res://musica/GGJ2024.ogg" id="10_jluu3"]
 
 [sub_resource type="Theme" id="Theme_g4vhq"]
 
@@ -88,3 +89,7 @@ initial_position = Vector2(1480, 120)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(560, 552)
+
+[node name="musica" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_jluu3")
+autoplay = true
