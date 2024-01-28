@@ -3,8 +3,6 @@ extends TextureRect
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var texto_punt = "Score: %s"%Globales.puntuacion
-	$LabelScore.text = texto_punt
 	pass # Replace with function body.
 
 

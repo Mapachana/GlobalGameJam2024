@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1cil7t1cr7aw"]
+[gd_scene load_steps=6 format=3 uid="uid://bn70ssvfbck25"]
 
 [ext_resource type="Texture2D" uid="uid://bffnnl6gs3672" path="res://graficos/rectangulonegro.png" id="1_o2jfg"]
-[ext_resource type="Script" path="res://escenas/creditos.gd" id="2_8cx3x"]
+[ext_resource type="Script" path="res://escenas/controles.gd" id="2_vr07q"]
 
 [sub_resource type="Theme" id="Theme_viyov"]
 
@@ -13,7 +13,7 @@
 offset_right = 1585.0
 offset_bottom = 911.0
 texture = ExtResource("1_o2jfg")
-script = ExtResource("2_8cx3x")
+script = ExtResource("2_vr07q")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
@@ -26,6 +26,7 @@ theme_override_font_sizes/font_size = 50
 text = "Menu"
 
 [node name="LabelScore" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 570.0
 offset_top = 213.0
@@ -37,25 +38,24 @@ text = "Score: 0"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 203.0
-offset_top = 331.0
-offset_right = 2251.0
-offset_bottom = 508.0
+offset_left = 175.0
+offset_top = 281.0
+offset_right = 2223.0
+offset_bottom = 458.0
 theme = SubResource("Theme_6tdiw")
-theme_override_font_sizes/font_size = 30
-text = "Credits: 
-Programmers: Mapachana, JJRamos
-Art: Elenoide
-Music: Alberto Guillen, Victor7"
+theme_override_font_sizes/font_size = 35
+text = "Click and drag through the map to draw the route for the gas.
+Click again on the gas to make it blow up and infect the teeth.
+And remember... laugh is contagious!"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 555.0
-offset_top = 43.0
-offset_right = 954.0
-offset_bottom = 180.0
+offset_left = 507.0
+offset_top = 46.0
+offset_right = 1036.0
+offset_bottom = 183.0
 theme = SubResource("Theme_046t1")
 theme_override_font_sizes/font_size = 100
-text = "CREDITS"
+text = "CONTROLS"
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

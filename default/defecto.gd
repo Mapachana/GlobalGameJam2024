@@ -5,6 +5,7 @@ var debug=true
 var current_scene = null
 
 var puntuacion
+var cont
 
 #signal sumarpunto(punt)
 
@@ -12,14 +13,25 @@ func _ready():
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	puntuacion = 0
+	cont = 0
 	
 func reiniciar_puntuacion():
 	puntuacion = 0
+	cont = 0
 	
 func sumar_puntuacion():
 	print("SUMOOOOOOOOOOOOOOO")
 	puntuacion += 1
 	#sumarpunto.emit(puntuacion)
+	get_tree().call_group("ventana", "mostrar_puntuacion", puntuacion)
+	
+func contar_infectados():
+	cont = 0
+	for perso in get_tree().get_nodes_in_group("personajes"):
+		if perso.infectado or perso.muerto:
+			cont += 1
+			
+	puntuacion = cont
 	get_tree().call_group("ventana", "mostrar_puntuacion", puntuacion)
 
 func goto_scene(path):

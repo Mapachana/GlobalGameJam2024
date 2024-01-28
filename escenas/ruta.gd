@@ -142,7 +142,8 @@ func _on_area_2d_body_entered(body):
 	if body.is_in_group("personajes") and !body.muerto and !body.infectado:
 		body.infectado = true;
 		Globales.sumar_puntuacion()
-		print("aaaaaaaaaa")
+		print("BOMBONA")
+		Globales.contar_infectados()
 
 func _unhandled_input(event):
 	if estado!=final:

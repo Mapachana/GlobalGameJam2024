@@ -100,15 +100,16 @@ func _on_area_2d_body_entered(body):
 	# Si se me acerca alguien infectado y estoy vivo
 	if body != self and !muerto and body.is_in_group("personajes") and body.infectado and !infectado:
 		# Me infecto yo
-		#print("ME INFECTO")
 		infectado = true;
 		Globales.sumar_puntuacion()
+		Globales.contar_infectados()
 		
 		# Si al infectarme yo hay otros cerca mia, los infecto
 		for bodies in $Area2D.get_overlapping_bodies(): #This one SHOULD get all the bodies in the area.
 			if bodies.is_in_group("personajes") and !bodies.infectado:
 				bodies.infectado = true;
 				Globales.sumar_puntuacion()
+				Globales.contar_infectados()
 			
 # Dados los puntos de la ruta crea un array con la ruta de ida+vuelta
 func asignar_puntos_vuelta():
