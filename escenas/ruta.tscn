@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://qrke8xc8tsec"]
+[gd_scene load_steps=11 format=3 uid="uid://qrke8xc8tsec"]
 
 [ext_resource type="Script" path="res://escenas/ruta.gd" id="1_bpjdd"]
 [ext_resource type="Texture2D" uid="uid://cu4nc71q88he0" path="res://graficos/BotellaNO2.png" id="2_3p3jd"]
+[ext_resource type="AudioStream" uid="uid://b6oq05dmkenne" path="res://musica/explotar.mp3" id="3_tsdxg"]
 
 [sub_resource type="Animation" id="Animation_m2gil"]
 length = 0.001
@@ -319,6 +320,9 @@ curve = SubResource("Curve2D_ox6aq")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(343, 783)
 rotation = -2.07335
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_tsdxg")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="MuelaParada/Area2D" to="." method="_on_area_2d_body_entered"]
