@@ -1,6 +1,7 @@
 extends Node2D
 
 signal trazado()
+signal explotado()
 
 var ruta=[]
 
@@ -80,6 +81,7 @@ func _process(delta):
 		else:
 			$MuelaParada/AnimationPlayerHumo.play("flusss")
 			explotada = true
+			emit_signal("explotado")
 			
 
 				
