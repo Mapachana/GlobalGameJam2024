@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkyiibuhic5o3"]
+[gd_scene load_steps=8 format=3 uid="uid://bkyiibuhic5o3"]
 
 [ext_resource type="Script" path="res://escenas/main.gd" id="1_jk5rv"]
 [ext_resource type="Texture2D" uid="uid://dsdtvtn1s4s3m" path="res://graficos/FONDO_ensayo.jpg" id="2_sc0gf"]
 [ext_resource type="PackedScene" uid="uid://bfy0n0xf8xlch" path="res://escenas/personajes.tscn" id="3_jriv1"]
 [ext_resource type="PackedScene" uid="uid://qrke8xc8tsec" path="res://escenas/ruta.tscn" id="4_6test"]
+[ext_resource type="PackedScene" uid="uid://d058ykhwot3kd" path="res://camilla.tscn" id="5_dqjgg"]
+[ext_resource type="PackedScene" uid="uid://cutsajwg80v2i" path="res://escenas/sofa.tscn" id="6_d44dq"]
 
 [sub_resource type="Theme" id="Theme_g4vhq"]
 
@@ -57,3 +59,15 @@ infectado = true
 [node name="Ruta" parent="." instance=ExtResource("4_6test")]
 position = Vector2(2, 4)
 initial_position = Vector2(200, 50)
+
+[node name="Camilla" parent="." instance=ExtResource("5_dqjgg")]
+position = Vector2(743, 224)
+
+[node name="sofa" parent="." instance=ExtResource("6_d44dq")]
+position = Vector2(1491, 778)
+
+[node name="sofa2" parent="." instance=ExtResource("6_d44dq")]
+position = Vector2(1417, 506)
+flip_horizontal = true
+flip_vertical = true
+color = Vector3(0.4, 0.4, 0.4)

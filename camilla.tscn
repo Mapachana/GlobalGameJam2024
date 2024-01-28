@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://d058ykhwot3kd"]
+
+[ext_resource type="Script" path="res://escenas/sofa.gd" id="1_25eua"]
+[ext_resource type="Texture2D" uid="uid://c8i3ugi5bmpcn" path="res://graficos/camilla.png" id="1_p1o3j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7nofd"]
+size = Vector2(203, 340)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_25eua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-5.75, 2)
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_7nofd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_p1o3j")

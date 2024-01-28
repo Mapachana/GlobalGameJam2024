@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cutsajwg80v2i"]
+
+[ext_resource type="Texture2D" uid="uid://ce1qbkciat0o8" path="res://graficos/tristesofa.png" id="1_fmwhv"]
+[ext_resource type="Script" path="res://escenas/sofa.gd" id="1_pafed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ur85"]
+size = Vector2(114, 218.003)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_pafed")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_fmwhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.01087, 3.99278)
+rotation = 0.00368065
+shape = SubResource("RectangleShape2D_4ur85")
