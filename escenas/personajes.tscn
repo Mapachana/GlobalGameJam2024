@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfy0n0xf8xlch"]
+[gd_scene load_steps=14 format=3 uid="uid://bfy0n0xf8xlch"]
 
 [ext_resource type="Script" path="res://escenas/personajes.gd" id="1_bsgrh"]
 [ext_resource type="Texture2D" uid="uid://chmcwn0q3txew" path="res://graficos/MuelaSpritesheet.png" id="2_hg1ia"]
-[ext_resource type="AudioStream" uid="uid://b1p8nkpjejis6" path="res://musica/03-jijii - stem-consolidated.mp3" id="3_umyck"]
+[ext_resource type="AudioStream" uid="uid://dk72tiiyarcmc" path="res://musica/risa2.mp3" id="3_i7gma"]
+[ext_resource type="AudioStream" uid="uid://bm3yvbi47ef66" path="res://musica/risa1.mp3" id="3_mc1pm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xm1st"]
 size = Vector2(77, 85.25)
@@ -140,7 +141,10 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_05lwe")
 
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_i7gma")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_umyck")
+stream = ExtResource("3_mc1pm")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
