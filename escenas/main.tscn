@@ -44,9 +44,6 @@ text = "Teeth infected: 0"
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(768, 435)
 
-[node name="Ruta" parent="." instance=ExtResource("4_6test")]
-initial_position = Vector2(1480, 120)
-
 [node name="Camilla" parent="." instance=ExtResource("5_dqjgg")]
 position = Vector2(54, 179)
 
@@ -75,3 +72,9 @@ puntos = PackedVector2Array(200, 300, 170, 500, 300, 150)
 [node name="CharacterBody2D4" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(1441, 522)
 puntos = PackedVector2Array(1400, 500, 1000, 600, 1200, 800)
+
+[node name="Ruta" parent="." instance=ExtResource("4_6test")]
+initial_position = Vector2(1480, 120)
+
+[node name="CharacterBody2D5" parent="." instance=ExtResource("3_jriv1")]
+position = Vector2(560, 552)

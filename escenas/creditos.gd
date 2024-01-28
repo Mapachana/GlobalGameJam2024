@@ -14,5 +14,5 @@ func _process(delta):
 
 
 func _on_button_pressed():
-	Globales.goto_scene("res://escenas/main.tscn")
+	Globales.goto_scene("res://escenas/titulo.tscn")
 	pass # Replace with function body.

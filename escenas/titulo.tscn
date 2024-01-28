@@ -37,6 +37,7 @@ theme_override_font_sizes/font_size = 50
 text = "Start"
 
 [node name="Label2" type="Label" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 224.0
 offset_top = 272.0
@@ -49,10 +50,10 @@ de nuevo para explotarla y contagia al mayor número de dients posible!"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 132.0
-offset_top = 54.0
-offset_right = 1454.0
-offset_bottom = 191.0
+offset_left = 138.0
+offset_top = 96.0
+offset_right = 1460.0
+offset_bottom = 233.0
 theme = SubResource("Theme_046t1")
 theme_override_font_sizes/font_size = 100
 text = "JUEGUICO DE LA JAM OLEEE"
