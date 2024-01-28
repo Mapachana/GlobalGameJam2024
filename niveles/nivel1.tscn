@@ -220,7 +220,7 @@ initial_position = Vector2(522, 119)
 
 [node name="Muela1" parent="Muelas" instance=ExtResource("8_njpqd")]
 position = Vector2(200, 200)
-puntos = PackedVector2Array(200, 200, 200, 550, 764, 550)
+puntos = PackedVector2Array(-1.333, 200)
 
 [node name="paso1" type="Marker2D" parent="Muelas/Muela1"]
 position = Vector2(-1.33333, 741.333)
