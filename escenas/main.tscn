@@ -62,7 +62,7 @@ position = Vector2(54, 179)
 position = Vector2(1487, 776)
 
 [node name="sofa2" parent="." instance=ExtResource("6_d44dq")]
-position = Vector2(1120, 777)
+position = Vector2(1130, 777)
 flip_horizontal = true
 
 [node name="camilla2" parent="." instance=ExtResource("6_7cyp1")]
@@ -74,21 +74,22 @@ puntos = PackedVector2Array(1400, 200, 600, 300)
 
 [node name="CharacterBody2D2" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(975, 691)
-puntos = PackedVector2Array(950, 700, 600, 500, 400, 400, 100, 800)
+puntos = PackedVector2Array(950, 700, 600, 500, 400, 400, 200, 800)
 
 [node name="CharacterBody2D3" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(192, 298)
-puntos = PackedVector2Array(200, 300, 170, 500, 300, 150)
+puntos = PackedVector2Array(200, 300, 170, 500, 300, 500)
 
 [node name="CharacterBody2D4" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(1441, 522)
-puntos = PackedVector2Array(1400, 500, 1000, 600, 1200, 800)
+puntos = PackedVector2Array(1400, 500, 1000, 700, 1200, 800)
 
 [node name="Ruta" parent="." instance=ExtResource("4_6test")]
 initial_position = Vector2(1480, 120)
 
 [node name="CharacterBody2D5" parent="." instance=ExtResource("3_jriv1")]
 position = Vector2(560, 552)
+puntos = PackedVector2Array(200, 400, 500, 700, 800, 300)
 
 [node name="musica" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("10_jluu3")
