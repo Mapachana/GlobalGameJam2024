@@ -12,5 +12,6 @@ func _process(delta):
 
 
 func _on_button_pressed():
+	Globales.reiniciar_puntuacion()
 	Globales.goto_scene("res://escenas/main.tscn")
 	pass # Replace with function body.

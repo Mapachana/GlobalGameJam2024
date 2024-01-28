@@ -8,7 +8,12 @@ func _ready():
 func _process(delta):
 	pass
 	
-
+# Empezar partida
 func _on_button_pressed():
 	Globales.goto_scene("res://escenas/main.tscn")
+	pass # Replace with function body.
+
+# Ver controles
+func _on_button_2_pressed():
+	Globales.goto_scene("res://escenas/controles.tscn")
 	pass # Replace with function body.

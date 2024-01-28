@@ -13,6 +13,9 @@ func _ready():
 	current_scene = root.get_child(root.get_child_count() - 1)
 	puntuacion = 0
 	
+func reiniciar_puntuacion():
+	puntuacion = 0
+	
 func sumar_puntuacion():
 	print("SUMOOOOOOOOOOOOOOO")
 	puntuacion += 1

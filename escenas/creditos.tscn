@@ -17,10 +17,10 @@ script = ExtResource("2_8cx3x")
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 687.0
-offset_top = 561.0
-offset_right = 695.0
-offset_bottom = 569.0
+offset_left = 650.0
+offset_top = 550.0
+offset_right = 900.0
+offset_bottom = 645.0
 theme = SubResource("Theme_viyov")
 theme_override_font_sizes/font_size = 50
 text = "Start"
@@ -36,7 +36,10 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "Score: 20
 
-made by: Mapachana, Elenoide, JJRamos, Alberto Guillen, Victor7"
+Credits: 
+Programmers: Mapachana, JJRamos
+Art: Elenoide
+Music: Alberto Guillen, Victor7"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
