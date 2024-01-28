@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://escenas/bombona.gd" id="1_e64d0"]
 [ext_resource type="Texture2D" uid="uid://cobsg8rymsx62" path="res://graficos/rectangulorojo.png" id="2_nowe6"]
-[ext_resource type="Texture2D" uid="uid://cgjgqewis0oh3" path="res://graficos/particulas_kenney/PNG/Fart/fart02.png" id="3_hg7h1"]
+[ext_resource type="Texture2D" uid="uid://c4q7psiec8ile" path="res://graficos/rectanguloverde.png" id="3_gd0ru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bleme"]
 size = Vector2(60, 56)
@@ -45,7 +45,7 @@ wait_time = 3.0
 [node name="particulas" type="GPUParticles2D" parent="."]
 emitting = false
 process_material = SubResource("ParticleProcessMaterial_ptc7a")
-texture = ExtResource("3_hg7h1")
+texture = ExtResource("3_gd0ru")
 randomness = 0.33
 
 [node name="Area2D" type="Area2D" parent="."]

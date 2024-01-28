@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qrke8xc8tsec"]
+[gd_scene load_steps=10 format=3 uid="uid://qrke8xc8tsec"]
 
 [ext_resource type="Script" path="res://escenas/ruta.gd" id="1_bpjdd"]
 [ext_resource type="Texture2D" uid="uid://cu4nc71q88he0" path="res://graficos/BotellaNO2.png" id="2_3p3jd"]
@@ -277,44 +277,6 @@ radius = 0.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8d10g"]
 size = Vector2(1572, 899)
 
-[sub_resource type="Animation" id="Animation_6dv8h"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MuelaParada:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [Vector2i(0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2xtaj"]
-resource_name = "parada"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("MuelaParada:frame_coords")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [Vector2i(0, 0), Vector2i(1, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n567q"]
-_data = {
-"RESET": SubResource("Animation_6dv8h"),
-"parada": SubResource("Animation_2xtaj")
-}
-
 [sub_resource type="Curve2D" id="Curve2D_ox6aq"]
 
 [node name="Ruta" type="Area2D"]
@@ -350,12 +312,6 @@ shape = SubResource("RectangleShape2D_8d10g")
 width = 2.0
 default_color = Color(0.282353, 0.282353, 0.282353, 1)
 joint_mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_n567q")
-}
-autoplay = "parada"
 
 [node name="Path2D" type="Path2D" parent="."]
 curve = SubResource("Curve2D_ox6aq")
