@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Sprite2D
 
 
 @export var flip_horizontal: bool
@@ -8,16 +8,16 @@ extends CharacterBody2D
 
 func _ready():
 	if flip_horizontal:
-		$Sprite2D.flip_h = true;
+		self.flip_h = true;
 	else:
-		$Sprite2D.flip_h = false;
+		self.flip_h = false;
 		
 	if flip_vertical:
-		$Sprite2D.flip_v = true;
+		self.flip_v = true;
 	else:
-		$Sprite2D.flip_v = false;
+		self.flip_v = false;
 		
-	$Sprite2D.modulate = Color(color.x, color.y, color.z)
+	self.modulate = Color(color.x, color.y, color.z)
 	
 	pass
 
