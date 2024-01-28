@@ -26,6 +26,7 @@ theme_override_font_sizes/font_size = 50
 text = "Start"
 
 [node name="LabelScore" type="Label" parent="."]
+layout_mode = 0
 offset_left = 570.0
 offset_top = 213.0
 offset_right = 2618.0
